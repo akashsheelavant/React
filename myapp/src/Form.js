@@ -15,7 +15,8 @@ class Form extends Component {
     }
 
     handleSubmit = (e) => {
-        e.preventDefault();        
+        e.preventDefault();
+        this.props.addItems(this.state);        
     }
 
     render() {

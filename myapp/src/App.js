@@ -11,13 +11,21 @@ class App extends Component {
     ]
   }
 
+  addItems = (ninja) => {
+    ninja.id = Math.random();
+    let ninjas = [...this.state.ninjas, ninja];
+    this.setState({
+      ninjas: ninjas
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>My first React app</h1>
         <p>Welcome!</p>
         <Ninjas ninjas={ this.state.ninjas } />
-        <Form />
+        <Form addItems={this.addItems}/>
       </div>
     );    
   }
